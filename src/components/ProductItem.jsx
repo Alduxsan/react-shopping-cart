@@ -7,12 +7,12 @@ class ProductItem extends Component {
     const { product, addToCart } = this.props
     console.log(this.props)
     return (
-      <div className="productCard">
+      <article className="productCard">
         <img src={product.img} alt={product} />
         <h3>{product.name}</h3>
         <p>{product.price}</p>
         <Button onClick={() => addToCart(product)}>Add to cart</Button>
-      </div>
+      </article>
     )
   }
 }

@@ -6,7 +6,7 @@ export class ProductList extends Component {
   render() {
     const { products, addToCart } = this.props
     return (
-      <div className="productsList">
+      <section className="productsList">
         {products.map((product) => (
           <ProductItem
             addToCart={addToCart}
@@ -14,7 +14,7 @@ export class ProductList extends Component {
             product={product}
           />
         ))}
-      </div>
+      </section>
     )
   }
 }
