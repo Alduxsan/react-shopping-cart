@@ -1,0 +1,27 @@
+.productsList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.productCard {
+  border: solid 1px #eee;
+  box-shadow: 0 5px 5px rgb(0, 0, 0, 0.1);
+  width: 30%;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+.productCard img {
+  width: 100%;
+}
+
+.productCard button {
+  background-color: #9aff5f;
+  border-radius: 5px;
+  padding: 2%;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
