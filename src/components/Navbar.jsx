@@ -4,10 +4,11 @@ import Cart from './Cart'
 
 export default class Navbar extends Component {
   render() {
+    const { cart, showCart, showCartList } = this.props
     return (
       <nav>
         <Logo />
-        <Cart />
+        <Cart cart={cart} showCart={showCart} showCartList={showCartList} />
       </nav>
     )
   }

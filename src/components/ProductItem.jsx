@@ -5,7 +5,7 @@ import Button from './Button'
 class ProductItem extends Component {
   render() {
     const { product, addToCart } = this.props
-    console.log(this.props)
+    //console.log(this.props)
     return (
       <article className="productCard">
         <img src={product.img} alt={product} />

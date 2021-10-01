@@ -6,29 +6,57 @@ import Navbar from './components/Navbar'
 
 import './css/App.css'
 
+import { vegetableList } from './dummyDB/vegetablesList'
+
 class App extends Component {
   state = {
-    products: [
-      { name: 'Tomate', price: 1500, img: '/productos/tomate.jpg' },
-      { name: 'Arvejas', price: 2600, img: '/productos/arbejas.jpg' },
-      { name: 'Lechuga', price: 600, img: '/productos/lechuga.jpg' },
-      { name: 'Tomate2', price: 1500, img: '/productos/tomate.jpg' },
-      { name: 'Arvejas2', price: 2600, img: '/productos/arbejas.jpg' },
-      { name: 'Lechuga2', price: 600, img: '/productos/lechuga.jpg' },
-      { name: 'Tomate3', price: 1500, img: '/productos/tomate.jpg' },
-      { name: 'Arvejas3', price: 2600, img: '/productos/arbejas.jpg' },
-      { name: 'Lechuga3', price: 600, img: '/productos/lechuga.jpg' },
-    ],
+    products: vegetableList,
+    cart: [],
+    showCart: false,
+  }
+
+  addToCart = (item) => {
+    const { cart } = this.state
+    if (cart.find((x) => x.name === item.name)) {
+      const newCart = cart.map((x) =>
+        x.name === item.name
+          ? {
+              ...x,
+              amount: x.amount + 1,
+            }
+          : x,
+      )
+      return this.setState({ cart: newCart })
+    }
+
+    return this.setState({
+      cart: this.state.cart.concat({
+        ...item,
+        amount: 1,
+      }),
+    })
+  }
+
+  showCartList = () => {
+    if (!this.state.cart.length) {
+      return
+    }
+    this.setState({ showCart: !this.state.showCart })
   }
 
   render() {
+    const { showCart } = this.state
     return (
       <div className="App">
-        <Navbar />
+        <Navbar
+          cart={this.state.cart}
+          showCart={this.state.showCart}
+          showCartList={this.showCartList}
+        />
         <Layout>
           <Title />
           <ProductList
-            addToCart={() => console.log('Nothing happens')}
+            addToCart={this.addToCart}
             products={this.state.products}
           />
         </Layout>
