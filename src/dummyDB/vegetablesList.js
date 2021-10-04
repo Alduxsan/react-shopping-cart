@@ -1,13 +1,17 @@
 const vegetableList = [
   { name: 'Tomate', price: 1500, img: '/productos/tomate.jpg' },
-  { name: 'Arvejas', price: 2600, img: '/productos/arbejas.jpg' },
+  { name: 'Arvejas', price: 2600, img: '/productos/arvejas.jpg' },
   { name: 'Lechuga', price: 600, img: '/productos/lechuga.jpg' },
-  { name: 'Tomate2', price: 1500, img: '/productos/tomate.jpg' },
-  { name: 'Arvejas2', price: 2600, img: '/productos/arbejas.jpg' },
-  { name: 'Lechuga2', price: 600, img: '/productos/lechuga.jpg' },
-  { name: 'Tomate3', price: 1500, img: '/productos/tomate.jpg' },
-  { name: 'Arvejas3', price: 2600, img: '/productos/arbejas.jpg' },
-  { name: 'Lechuga3', price: 600, img: '/productos/lechuga.jpg' },
+  { name: 'Banana', price: 1500, img: '/productos/banana.jpg' },
+  { name: 'naranja', price: 2600, img: '/productos/naranja.jpeg' },
+  { name: 'frutilla', price: 600, img: '/productos/frutilla.jpeg' },
+  { name: 'Tomate cherry', price: 1500, img: '/productos/cherry.jpeg' },
+  { name: 'Habas', price: 2600, img: '/productos/habas.jpg' },
+  {
+    name: 'Acelga arcoiris',
+    price: 600,
+    img: '/productos/acelga-arcoiris.jpg',
+  },
 ]
 
 export { vegetableList }

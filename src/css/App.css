@@ -1,5 +1,7 @@
 .titulo {
+  display: flex;
   margin-bottom: 10px;
+  justify-content: center;
 }
 
 nav {
@@ -11,6 +13,7 @@ nav {
   position: relative;
   padding: 0 50px;
   box-shadow: 0 2px 3px rgb(0, 0, 0, 0.2);
+  background-color: #d4d700;
 }
 
 .logo {
@@ -23,8 +26,20 @@ nav {
   color: #fff;
   border-style: none;
   padding: 15px;
-  border-radius: 15px;
+  border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 2px 3px rgb(0, 0, 0, 0.2);
+}
+
+.cartImg {
+  width: 30px;
+}
+.cartImg:hover {
+  width: 35px;
+}
+
+.cart:hover {
+  background-color: #489b40;
 }
 
 .bubbleAlert {
@@ -69,4 +84,17 @@ nav {
   align-items: center;
   padding: 25px 20px;
   border-bottom: solid 1px #aaa;
+}
+
+.layout {
+  background-color: #fff;
+  color: #0a283e;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-container {
+  width: auto;
+  background-color: #eeef20;
 }

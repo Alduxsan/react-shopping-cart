@@ -37,6 +37,21 @@ class App extends Component {
     })
   }
 
+  removeFromCart = (item) => {
+    const { cart } = this.state
+    if (cart.find((x) => x.name === item.name)) {
+      const newCart = cart.map((x) =>
+        x.name === item.name && x.amount > 0
+          ? {
+              ...x,
+              amount: x.amount - 1,
+            }
+          : x,
+      )
+      return this.setState({ cart: newCart })
+    }
+  }
+
   showCartList = () => {
     if (!this.state.cart.length) {
       return
@@ -50,8 +65,9 @@ class App extends Component {
       <div className="App">
         <Navbar
           cart={this.state.cart}
-          showCart={this.state.showCart}
+          showCart={showCart}
           showCartList={this.showCartList}
+          removeFromCart={this.removeFromCart}
         />
         <Layout>
           <Title />
